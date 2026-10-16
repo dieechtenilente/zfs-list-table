@@ -1,6 +1,6 @@
 #/usr/bin/python
-# 
-# import json
+
+import json
 from subprocess import run
 
 SORT_BY = "used_percent"
