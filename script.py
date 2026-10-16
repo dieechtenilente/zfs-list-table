@@ -1,4 +1,6 @@
-import json
+#/usr/bin/python
+# 
+# import json
 from subprocess import run
 
 SORT_BY = "used_percent"
@@ -21,7 +23,6 @@ try:
     data = json.loads(result.stdout)
 except:
     pass
-
 
 zfs_datasets = []
 
