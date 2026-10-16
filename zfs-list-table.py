@@ -3,8 +3,12 @@
 import json
 from subprocess import run
 
+# Sort by this table header
+SORT = True
 SORT_BY = "used_percent"
+# Reverse sort
 SORT_REVERSE= True
+# Print top n
 PRINT_TOP_N = True
 TOP_N = 5
 
@@ -52,7 +56,8 @@ print(table_header)
 print("-" * len(table_header))
 
 # order by used_percent, descending
-zfs_datasets.sort(key=lambda d: d[SORT_BY], reverse=SORT_REVERSE)
+if SORT:
+    zfs_datasets.sort(key=lambda d: d[SORT_BY], reverse=SORT_REVERSE)
 
 # Print only first TOP_N results
 if PRINT_TOP_N:
